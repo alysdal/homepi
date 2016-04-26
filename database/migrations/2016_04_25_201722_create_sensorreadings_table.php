@@ -12,6 +12,7 @@ class CreateSensorreadingsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('sensorreadings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('sensor');
