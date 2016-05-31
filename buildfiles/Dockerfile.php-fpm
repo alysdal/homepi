@@ -1,0 +1,13 @@
+FROM matriphe/alpine-php:fpm
+
+# Set Workdir
+WORKDIR /www
+
+# Expose volumes
+VOLUME ["/www"]
+
+# Expose ports
+EXPOSE 9000
+
+# Entry point
+ENTRYPOINT ["/usr/sbin/php-fpm7"]

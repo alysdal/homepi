@@ -1,0 +1,23 @@
+php:
+  build: .
+  dockerfile: buildfiles/Dockerfile.php-fpm
+  volumes:
+    - .:/www
+  environment:
+    APP_DEBUG: "true"
+    APP_ENV: "local"
+    APP_KEY: "<app_key>"
+    DB_HOST: "<db_hostname>"
+    DB_DATABASE: "<db_database>"
+    DB_USERNAME: "<db_username>"
+    DB_PASSWORD: "<db_password>"
+
+web:
+  build: .
+  dockerfile: buildfiles/Dockerfile.nginx
+  links:
+    - php:fpm
+  ports:
+    - 1338:80
+  volumes:
+    - .:/var/www/html

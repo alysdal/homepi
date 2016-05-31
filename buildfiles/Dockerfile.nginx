@@ -1,0 +1,6 @@
+FROM ckulka/rpi-nginx
+
+COPY buildfiles/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY buildfiles/nginx/site.conf /etc/nginx/conf.d/default.conf
+
+#ADD . /var/www/html
