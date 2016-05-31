@@ -1,6 +1,8 @@
 FROM ckulka/rpi-nginx
 
-COPY buildfiles/nginx/nginx.conf /etc/nginx/nginx.conf
+#COPY buildfiles/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY buildfiles/nginx/site.conf /etc/nginx/conf.d/default.conf
+
+ENV NGINX_NO_UPDATE=
 
 #ADD . /var/www/html

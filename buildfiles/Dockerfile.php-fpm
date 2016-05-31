@@ -1,4 +1,4 @@
-FROM matriphe/alpine-php:fpm
+FROM matriphe/alpine-php:fpm7
 
 # Set Workdir
 WORKDIR /www
