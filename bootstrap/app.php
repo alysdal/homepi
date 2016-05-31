@@ -23,7 +23,9 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+ $app->withFacades();
+//re-add the App facade removed in 5.2:
+class_alias('Illuminate\Support\Facades\App', 'App');
 
 // $app->withEloquent();
 
@@ -81,6 +83,8 @@ $app->singleton(
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+$app->register(Aws\Laravel\AwsServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
